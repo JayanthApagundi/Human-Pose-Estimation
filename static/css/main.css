@@ -41,6 +41,7 @@ html {
 .content p {
   text-align: center;
   text-align: justify;
+  letter-spacing: 0.6px;
 }
 
 .content button {

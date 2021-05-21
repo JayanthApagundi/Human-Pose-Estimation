@@ -7,7 +7,7 @@ Commands to execute before execution ( for creating a virtual environment )
 To activate
 - navigate to cd env/Scripts
 - ./activate [Enter]
-- navigate back to main directory i.e: cd../..
+- navigate back to main directory i.e: cd ../..
 
 After Activation
 - pip install flask [Enter]
