@@ -49,3 +49,32 @@ html {
   background-color: black;
   align-items: center;
 }
+
+.detail {
+  background-color: #dddddd;
+}
+
+.detail p {
+  text-align: center;
+  text-align: justify;
+}
+
+.detail button {
+  color: white;
+  background-color: black;
+  align-items: center;
+}
+
+.detail h1 {
+  letter-spacing: 1.2px;
+}
+
+.detail h3 {
+  letter-spacing: 1px;
+}
+
+.detail h6 {
+  color: #ff0000;
+}
+
+
