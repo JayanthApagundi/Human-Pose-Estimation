@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body,
 html {
   margin: 0;
@@ -74,7 +77,62 @@ html {
 }
 
 .detail h6 {
-  color: #ff0000;
+  color: black;
+  font-size: 15px;
 }
 
+.img-desc h1 {
+  letter-spacing: 2px;
+  font-size: 60px;
+}
 
+.img-desc {
+  background-color: #cccccc;
+}
+
+.img-desc li {
+  text-align: justify;
+}
+
+.vid-desc h1 {
+  letter-spacing: 2px;
+  font-size: 60px;
+}
+
+.vid-desc {
+  background-color: #bbbbbb;
+}
+
+.vid-desc li {
+  text-align: justify;
+}
+
+.real-desc h1 {
+  letter-spacing: 2px;
+  font-size: 60px;
+}
+
+.real-desc {
+  background-color: #afafaf;
+}
+
+.real-desc li {
+  text-align: justify;
+}
+
+.real-desc b {
+  font-size: 8px;
+  position: absolute;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+label {
+  color: white;
+  height: 32px;
+  width: 225px;
+  background-color: black;
+  border-radius: 20px 20px 20px 20px;
+}

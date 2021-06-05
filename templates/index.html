@@ -24,12 +24,12 @@ crossorigin="anonymous"
       <p class="col-md-6 pt-5 pr-4">Human Pose Estimation is defined as the problem of localization of human joints (also known as keypoints - elbows, wrists, etc) in images or videos. It is also defined as the search for a specific pose in space of all articulated poses. 2D Pose estimates a 2D pose (x,y) coordinates for each joint from a RGB image. 3D Pose estimates a 3D pose (x,y,z) coordinates a RGB image.
       Human Pose Estimation has some pretty cool applications like surveillance and security, Augmented/Virtual Reality, Animations, Gaming, Activity recognition, Teaching robots to perform particular action/tasks. </p>
     <div class="col-md-6 text-center pt-5">
-      <button type="button" class="btn bt-lg"> Get Started </button>
+     <a href="#details"><button type="button" class="btn bt-lg"> Get Started </button></a>
     </div>
     </div>
   </div>
-   
-  <div class="detail">
+
+  <div class="detail" id="details">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
@@ -43,7 +43,7 @@ crossorigin="anonymous"
         <i class="fas fa-image fa-5x p-2 pt-3"></i> 
         <p class="pt-4 pb-4 pr-3 pl-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid, incidunt maxime, consectetur amet in, dolore debitis iure ipsa laborum expedita quam error nemo impedit delectus aliquam modi at blanditiis aliquam modi at</p>
         <div class="pb-4">
-        <button type="button" class="btn bt-lg"> Get Started </button>
+        <a href="#img-esti"><button type="button" class="btn bt-lg"> Try this out </button></a>
       </div>
       </div>
       <div class="col-md-4 text-center">
@@ -51,19 +51,131 @@ crossorigin="anonymous"
         <i class="fas fa-video fa-5x p-2 pt-3"></i>
         <p class="pt-4 pb-4 pr-3 pl-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, similique saepe accusamus voluptatem et numquam sapiente repudiandae in architecto impedit dolore culpa sed error deserunt tenetur minima, asperiores suscipit odit?</p>
         <div class="pb-4">
-          <button type="button" class="btn bt-lg"> Get Started </button>
+          <a href="#vid-esti"><button type="button" class="btn bt-lg"> Try this out </button></a>
         </div>
       </div>
       <div class="col-md-4 text-center">
         <h3 class="pt-4 pb-3"> Real time Estimation </h3>
-        <h6 class="pl-5 ml-5"><b> LIVE </b></h6>
+        <h6 class="pl-5 ml-5">&#128308<b>LIVE</b></h6>
         <i class="fas fa-camera fa-5x"></i>
         <p class="pt-4 pb-4 pr-3 pl-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis animi quas maiores alias, enim sint doloribus eveniet omnis blanditiis hic praesentium impedit nemo provident nam accusamus dolores optio natus?</p>
         <div class="pb-4">
-          <button type="button" class="btn bt-lg"> Get Started </button>
+          <a href="#real-esti"><button type="button" class="btn bt-lg"> Try this out </button></a>
         </div>
       </div>
     </div>
   </div>
   </div>
+
+  <div class="img-desc" id="img-esti">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="pt-4 pb-1"> Image Estimation </h1>
+        </div>
+      </div>
+      <hr style="color: black;">
+      <div class="row">
+        <div class="col-md-5 text-center">
+          <img class="img-fluid features mr-5 pb-5 pt-4" src="../static/images/img-esti.png">
+        </div>
+        <div class="col-md-7 text-center">
+          <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia kjsbdfjkj njujewb </li> <br>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam fugiat nob</li> <br>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur</li>
+          </ul>
+          <div class="pt-4 pl-1">
+          <input type="file" id="file" accept="image/*">
+          <label for="file">
+            <i class="fas fa-image"></i> &nbsp; 
+            Choose a Photo
+          </label>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vid-desc" id="vid-esti">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="pt-4 pb-1"> Video Estimation </h1>
+        </div>
+      </div>
+      <hr style="color: black;">
+      <div class="row">
+        <div class="col-md-7 text-center">
+          <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia kjsbdfjkj njujewb </li> <br>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam fugiat nob</li> <br>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur</li>
+          </ul>
+          <div class="pt-4 pl-1">
+          <input type="file" id="file" accept="video/*">
+          <label for="file">
+            <i class="fas fa-video"></i> &nbsp; 
+            Choose a Video
+          </label>
+        </div>
+        </div>
+        <div class="col-md-5 text-center">
+          <img class="img-fluid features mr-5 pb-5 pt-4" src="../static/images/video-esti.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="real-desc" id="real-esti">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="pt-4 pb-1"> Real Time Estimation </h1>
+        </div>
+      </div>
+      <hr style="color: black;">
+      <div class="row">
+        <div class="col-md-5 text-center">
+          <img class="img-fluid features mr-5 pb-5 pt-4" src="../static/images/live-esti.png">
+        </div>
+        <div class="col-md-7 text-center">
+          <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia kjsbdfjkj njujewb </li> <br>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam fugiat nob</li> <br>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur</li>
+          </ul>
+          <div class="pt-4 pl-1">
+          <!--<input type="file" id="file" accept="image/*"> -->
+          <label for="file">
+            <i class="fas fa-camera"></i><b>&#128308</b>&nbsp; 
+            &nbsp;&nbsp;Go LIVE 
+          </label>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+ <!-- CDN's-->
+  <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 {% endblock %}
