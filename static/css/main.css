@@ -129,6 +129,12 @@ html {
   position: absolute;
 }
 
+.real-desc button {
+  color: white;
+  background-color: black;
+  align-items: center;
+}
+
 input[type='file'] {
   display: none;
 }
