@@ -16,7 +16,7 @@ For Windows
 - navigate back to main directory i.e: cd ../..
 
 For MacOS
-- source env/Scripts/activate
+- source env/Scripts/activate [Enter]
 
 To deactivate env
 - deactivate [Enter]
