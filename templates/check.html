@@ -6,9 +6,11 @@
 
 {% block body %}
 <h1> Success </h1>
-{% if filename %}
+{% if data %}
         <div>
-            <img src="{{ url_for('display_image', filename=filename) }}">
+<!--            <img src="{{ url_for('display_image', filename=filename) }}">-->
+            <img src="{{ data.processed_img }}" alt="" width="480px" height="360px">
+            <img src="{{ data.uploaded_img }}" alt="" width="480px" height="360px">
         </div>
 {% endif %}
 {% endblock %} 
