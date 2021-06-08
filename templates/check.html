@@ -6,4 +6,9 @@
 
 {% block body %}
 <h1> Success </h1>
+{% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}">
+        </div>
+{% endif %}
 {% endblock %} 
