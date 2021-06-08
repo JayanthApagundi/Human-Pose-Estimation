@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="HandheldFriendly" content="true">
 <!-- CDN's -->
 <link
 rel="stylesheet"
@@ -19,36 +17,22 @@ href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
 integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
 crossorigin="anonymous"
 />
-
 {% endblock %}
 
 {% block body %}
 
-
-  <section class="container-fluid bg-section">
+  <div class="bg-section">
     <div class="content">
-      <div class="row">
-      <div class="col-md-7">
-      <h1>Human Pose Estimation </h1>
-      </div>
-    </div>
-     <div class="row">
-     <div class="col-md-6 text-center">
-      <p class="pt-5 pr-4 pl-3">Human Pose Estimation is defined as the problem of localization of human joints (also known as keypoints - elbows, wrists, etc) in images or videos. It is also defined as the search for a specific pose in space of all articulated poses. 2D Pose estimates a 2D pose (x,y) coordinates for each joint from a RGB image. 3D Pose estimates a 3D pose (x,y,z) coordinates a RGB image.
+      <h1> Human Pose Estimation </h1>
+      <p class="col-md-6 pt-5 pr-4">Human Pose Estimation is defined as the problem of localization of human joints (also known as keypoints - elbows, wrists, etc) in images or videos. It is also defined as the search for a specific pose in space of all articulated poses. 2D Pose estimates a 2D pose (x,y) coordinates for each joint from a RGB image. 3D Pose estimates a 3D pose (x,y,z) coordinates a RGB image.
       Human Pose Estimation has some pretty cool applications like surveillance and security, Augmented/Virtual Reality, Animations, Gaming, Activity recognition, Teaching robots to perform particular action/tasks. </p>
+    <div class="col-md-6 text-center pt-5">
+     <a href="#details"><button type="button" class="btn bt-lg"> Get Started </button></a>
+    </div>
     </div>
   </div>
-  <div class="row">
-  <div class="col-md-6 text-center pt-5">
-    <a href="#details"><button type="button" class="btn bt-lg"> Get Started </button></a>
-   </div>
-  </div>
-    </div>
-  </section>
 
-
-
-  <section class="container-fluid detail" id="details">
+  <div class="detail" id="details">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
@@ -59,7 +43,7 @@ crossorigin="anonymous"
     <div class="row">
       <div class="col-md-4 text-center">
         <h3 class="pt-4 pb-3"> Image Estimation </h3>
-        <i class="fas fa-image fa-5x p-2 pt-3"></i> 
+        <i class="fas fa-image fa-5x p-2 pt-3"></i>
         <p class="pt-4 pb-4 pr-3 pl-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid, incidunt maxime, consectetur amet in, dolore debitis iure ipsa laborum expedita quam error nemo impedit delectus aliquam modi at blanditiis aliquam modi at</p>
         <div class="pb-4">
         <a href="#img-esti"><button type="button" class="btn bt-lg"> Try this out </button></a>
@@ -84,11 +68,9 @@ crossorigin="anonymous"
       </div>
     </div>
   </div>
-  </section>
+  </div>
 
-
-
-  <section class="container-fluid img-desc" id="img-esti">
+  <div class="img-desc" id="img-esti">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
@@ -98,7 +80,7 @@ crossorigin="anonymous"
       <hr style="color: black;">
       <div class="row">
         <div class="col-md-5 text-center">
-          <img class="img-fluid features mr-5 pb-5 pt-4 pr-3" src="../static/images/img-esti.png">
+          <img class="img-fluid features mr-5 pb-5 pt-4" src="../static/images/img-esti.png">
         </div>
         <div class="col-md-7 text-center">
           <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
@@ -107,23 +89,21 @@ crossorigin="anonymous"
             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur</li>
           </ul>
           <div class="pt-4 pl-1">
-           <form action="/upload", method="post" enctype ="multipart/form-data"></form>
-          <input type="file" name="file" id="file" accept="image/*">
-          <label for="file">
-            <i class="fas fa-image"></i> &nbsp; 
-            Choose a Photo
-          </label>
-          <input type="submit" value="Upload">
-        </form>
+            <form action ="/upload" method="post" enctype=multipart/form-data>
+            <input type="file" name="file" id="file" accept="image/*">
+            <label for="file">
+              <i class="fas fa-image"></i> &nbsp;
+              Choose a Photo
+            </label>
+              <input type = "submit" value = "upload">
+            </form>
         </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-
-
-  <section class="container-fluid vid-desc" id="vid-esti">
+  <div class="vid-desc" id="vid-esti">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
@@ -132,9 +112,6 @@ crossorigin="anonymous"
       </div>
       <hr style="color: black;">
       <div class="row">
-        <div class="col-md-5 text-center">
-          <img class="img-fluid features mr-5 pb-5 pt-4 pr-3" src="../static/images/video-esti.png">
-        </div>
         <div class="col-md-7 text-center">
           <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia kjsbdfjkj njujewb </li> <br>
@@ -142,22 +119,21 @@ crossorigin="anonymous"
             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur</li>
           </ul>
           <div class="pt-4 pl-1">
-          <form action="">
           <input type="file" id="file" accept="video/*">
           <label for="file">
-            <i class="fas fa-video"></i> &nbsp; 
+            <i class="fas fa-video"></i> &nbsp;
             Choose a Video
           </label>
-        </form>
         </div>
+        </div>
+        <div class="col-md-5 text-center">
+          <img class="img-fluid features mr-5 pb-5 pt-4" src="../static/images/video-esti.png">
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-
-
-  <section class="container-fluid real-desc" id="real-esti">
+  <div class="real-desc" id="real-esti">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
@@ -167,7 +143,7 @@ crossorigin="anonymous"
       <hr style="color: black;">
       <div class="row">
         <div class="col-md-5 text-center">
-          <img class="img-fluid features mr-5 pb-5 pt-4 pr-3" src="../static/images/live-esti.png">
+          <img class="img-fluid features mr-5 pb-5 pt-4" src="../static/images/live-esti.png">
         </div>
         <div class="col-md-7 text-center">
           <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
@@ -177,20 +153,21 @@ crossorigin="anonymous"
           </ul>
           <div class="pt-4 pl-1">
           <!--<input type="file" id="file" accept="image/*"> -->
-          <button type="button" class="btn bt-lg"> <i class="fas fa-camera"></i><b>&#128308</b>&nbsp; 
-            &nbsp;&nbsp;Go LIVE </button>
+          <label for="file">
+            <i class="fas fa-camera"></i><b>&#128308</b>&nbsp;
+            &nbsp;&nbsp;Go LIVE
+          </label>
         </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
 
 
 
 
 
-  
  <!-- CDN's-->
   <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
