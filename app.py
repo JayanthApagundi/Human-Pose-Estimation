@@ -15,7 +15,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 6 * 1024 * 1024
 
-ALLOWED_EXTENSIONS = set(['jpg','png','jpeg'])
+ALLOWED_EXTENSIONS = set(['jpg','png','jpeg','mp4'])
 
 mpDraw = mp.solutions.drawing_utils
 mpPose = mp.solutions.pose
@@ -36,7 +36,7 @@ def upload():
     file = request.files['file']
     if file.filename == '':
         # flash('No image selected for uploading')
-        return redirect(request.url)
+        return redirect('/')
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -46,7 +46,7 @@ def upload():
             "processed_img": 'static/download/' + filename,
             "uploaded_img": 'static/upload/' + filename
         }
-        return render_template('check.html', data=data)
+        return render_template('image.html', data=data)
     else:
         # flash('Allowed image types are - png, jpg, jpeg')
         return redirect('/')
@@ -60,7 +60,6 @@ def display_image(path, filename):
             static_image_mode=True,
             model_complexity=1,
             min_detection_confidence=0.5) as pose:
-        # while True:
         image = cv2.imread(path)
         # image_height, image_width, _ = image.shape
         results = pose.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
@@ -72,13 +71,30 @@ def display_image(path, filename):
                 # print(id, lm)
                 cx, cy = int(lm.x * w), int(lm.y * h)  # to get pixel value of x,y landmarks
                 cv2.circle(image, (cx, cy), 5, (255, 0, 0), cv2.FILLED)
-        # img = cv2.resize(image, (1060, 980))  # Resize image
         cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename}", image)
-        # cv2.imshow("Image", image)
-        # cv2.waitKey(0)
 
-    # return redirect(url_for('static', filename='upload/' + filename), code=301)
+@app.route('/vidupload', methods=['GET', 'POST'])
+def vidupload():
+    if 'file' not in request.files:
+        #flash('No file part')
+        return redirect('/')
+    file = request.files['file']
+    if file.filename == '':
+        #flash('No image selected for uploading')
+        return redirect('/')
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        # print('upload_image filename: ' + filename)
+        #flash('Image successfully uploaded and displayed below')
+        return render_template('video.html', filename=filename)
+    else:
+        #flash('Allowed image types are - png, jpg, jpeg, gif')
+        return redirect('/')
 
+@app.route('/displayvid/<filename>')
+def displayvid(filename):
+    return redirect(url_for('static', filename='upload/' + filename), code=301)
 
 if __name__ == "__main__":
     app.run(debug=True)
