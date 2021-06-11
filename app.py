@@ -1,4 +1,4 @@
-from flask import Flask,abort,render_template,request,redirect,url_for,flash
+from flask import Flask,abort,render_template,request,redirect,url_for,flash, Response
 import os
 import urllib.request
 from werkzeug.utils import secure_filename
@@ -90,38 +90,39 @@ def vidupload():
         # print('upload_image filename: ' + filename)
         #flash('Image successfully uploaded and displayed below')
         ################
-        process_vidfile(os.path.join(UPLOAD_FOLDER, filename), filename)
+        # process_vidfile(os.path.join(UPLOAD_FOLDER, filename), filename)
         # time.sleep(18)
-        data = {
-            "processed_vid": 'static/download/' + filename,
-            "uploaded_vid": 'static/upload/' + filename
-        }
+        # data = {
+        #     "processed_vid": 'static/download/' + filename,
+        #     "uploaded_vid": 'static/upload/' + filename
+        # }
 
         ################
-        return render_template('video.html', data=data)
+        # return render_template('video.html', data=data)
+        return Response(displayvid(os.path.join(UPLOAD_FOLDER, filename)), mimetype='multipart/x-mixed-replace; boundary=frame')
     else:
         #flash('Allowed image types are - png, jpg, jpeg, gif')
         return redirect('/')
 
-def process_vidfile(path, filename):
-    displayvid(path, filename)
+# def process_vidfile(path, filename):
+#     displayvid(path, filename)
 
-@app.route('/displayvid/<filename>')
-def displayvid(path, filename):
+@app.route('/displayvid/<filename>', methods=['GET', 'POST'])
+def displayvid(path):
     ####### MODEL############
     cap = cv2.VideoCapture(path)  # for webcam use '0'
-    pTime = 0
+    # pTime = 0
 
-    dir = r'static/download'
-    os.chdir(dir)
-
-    frame_width = int(cap.get(3))
-    frame_height = int(cap.get(4))
-
-    size = (frame_width, frame_height)
-    result = cv2.VideoWriter(filename,
-                             cv2.VideoWriter_fourcc(*'mp4v'),
-                             20, size) # *'MP4V'
+    # dir = r'static/download'
+    # os.chdir(dir)
+    #
+    # frame_width = int(cap.get(3))
+    # frame_height = int(cap.get(4))
+    #
+    # size = (frame_width, frame_height)
+    # result = cv2.VideoWriter(filename,
+    #                          cv2.VideoWriter_fourcc(*'mp4v'),
+    #                          20, size) # *'MP4V'
     # vid_array=[]
     while True:
         success, img = cap.read()  # img is in BGR but mediapipe uses RGB
@@ -130,7 +131,6 @@ def displayvid(path, filename):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # converts BGR to RGB
         results = pose.process(imgRGB)  # sending the image to our model
 
-        # print(results.pose_landmarks)
         if results.pose_landmarks:
             mpDraw.draw_landmarks(img, results.pose_landmarks,mpPose.POSE_CONNECTIONS)  # to draw keypoints(pose_landmarks) and connections(pose_CONNECTION)
             for id, lm in enumerate(results.pose_landmarks.landmark):
@@ -139,25 +139,58 @@ def displayvid(path, filename):
                 cx, cy = int(lm.x * w), int(lm.y * h)  # to get pixel value of x,y landmarks
                 cv2.circle(img, (cx, cy), 5, (255, 0, 0), cv2.FILLED)
 
+        ret, buffer = cv2.imencode('.jpg', img)
+        frame = buffer.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
         # cTime = time.time()
         # fps = 1 / (cTime - pTime)
         # pTime = cTime
         #
         # cv2.putText(img, str(int(fps)), (70, 50), cv2.FONT_HERSHEY_PLAIN, 3,
         #             (255, 0, 0), 3)
-        # imgResize = cv2.resize(img, (800, 800))  # Resize image 1060 x 1000
         # vid_array.append(img)
-        if success == True:
-            # Write the frame into the
-            # file 'filename.avi'
-            result.write(img)
+        # if success == True:
+        #     result.write(img)
         # cv2.imshow("Image", img)
-        cv2.waitKey(1)
+        # cv2.waitKey(1)
 
     # return redirect(url_for('static', filename='upload/' + filename), code=301)
     # out = cv2.VideoWriter(filename,cv2.VideoWriter_fourcc(*'mp4v'), 20, size)
     # for i in range(len(vid_array)):
     #     out.write(vid_array[i])
+
+def live():
+    cap = cv2.VideoCapture(0)
+    while True:
+        success, img = cap.read()  # img is in BGR but mediapipe uses RGB
+        if success == False:
+            break
+        imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # converts BGR to RGB
+        results = pose.process(imgRGB)  # sending the image to our model
+
+        if results.pose_landmarks:
+            mpDraw.draw_landmarks(img, results.pose_landmarks,mpPose.POSE_CONNECTIONS)  # to draw keypoints(pose_landmarks) and connections(pose_CONNECTION)
+            for id, lm in enumerate(results.pose_landmarks.landmark):
+                h, w, c = img.shape
+                # print(id, lm)
+                cx, cy = int(lm.x * w), int(lm.y * h)  # to get pixel value of x,y landmarks
+                cv2.circle(img, (cx, cy), 5, (255, 0, 0), cv2.FILLED)
+
+        ret, buffer = cv2.imencode('.jpg', img)
+        frame = buffer.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+        # cv2.imshow("Image", img)
+        # if cv2.waitKey(1) & 0xFF == ord('q'):
+        #     break
+    # return render_template('live.html')
+
+@app.route('/video_feed', methods=['GET', 'POST'])
+def video_feed():
+    #Video streaming route. Put this in the src attribute of an img tag
+    return Response(live(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
     app.run(debug=True)

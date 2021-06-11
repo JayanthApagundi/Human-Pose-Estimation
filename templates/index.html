@@ -189,8 +189,10 @@ crossorigin="anonymous"
           </ul>
           <div class="pt-4 pl-1">
           <!--<input type="file" id="file" accept="image/*"> -->
-           <button type="button" class="btn bt-lg"> <i class="fas fa-camera"></i><b>&#128308</b>&nbsp;
+            <form action="/video_feed" method="post">
+           <button type="submit" name="Go Live" class="btn bt-lg" onclick="video_feed()"> <i class="fas fa-camera"></i><b>&#128308</b>&nbsp;
             &nbsp;&nbsp;Go LIVE </button>
+            </form>
         </div>
         </div>
       </div>

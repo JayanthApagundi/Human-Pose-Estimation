@@ -10,16 +10,18 @@
 
 {% block body %}
 <h1> Success </h1>
-{% if data %}
-    <video width="640" height="480" loop controls autoplay>
-        <source src="{{ data.processed_vid }}" type="video/mp4">
+<!--<img src="{{ url_for('displayvid') }}" width="100%">-->
+
+<!--{% if data %}-->
+    <video width="640" height="480" controls>
+        <source src="{{ url_for('displayvid') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <video width="640" height="480" controls autoplay>
-        <source src="{{ data.uploaded_vid }}" type="video/mp4">
-    </video>
+<!--    <video width="640" height="480" controls autoplay>-->
+<!--        <source src="{{ data.uploaded_vid }}" type="video/mp4">-->
+<!--    </video>-->
 
-{% endif %}
+<!--{% endif %}-->
 <!--{% if data %}-->
 <!--    <video width="640" height="480" controls>-->
 <!--        <source src="{{ data.processed_vid }}" type="video/mp4">-->
