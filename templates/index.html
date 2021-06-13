@@ -57,15 +57,19 @@
       <div class="col-md-4 text-center">
         <h3 class="pt-4 pb-3"> Image Estimation </h3>
         <i class="fas fa-image fa-5x p-2 pt-3"></i>
-        <p class="pt-4 pb-4 pr-3 pl-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid, incidunt maxime, consectetur amet in, dolore debitis iure ipsa laborum expedita quam error nemo impedit delectus aliquam modi at blanditiis aliquam modi at</p>
-        <div class="pb-4">
+        <p class="pt-4 pb-5 pr-3 pl-3 m-2">Here we try to estimate the posture of the person present in a picture(a static image).
+          Compared to Video or Real-Time, Image Estimation is comparatively easier to compute. Please note that here, we can estimate the pose of a single person in the image.
+        </p>
+        <div class="pb-4 pt-1 mt-4">
         <a href="#img-esti"><button type="button"  class="btn btn-outline-dark" style="border-radius: 20px 20px 20px 20px;"><b>Try this out !</b></button></a>
       </div>
       </div>
       <div class="col-md-4 text-center">
         <h3 class="pt-4 pb-3"> Video Estimation </h3>
         <i class="fas fa-video fa-5x p-2 pt-3"></i>
-        <p class="pt-4 pb-4 pr-3 pl-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, similique saepe accusamus voluptatem et numquam sapiente repudiandae in architecto impedit dolore culpa sed error deserunt tenetur minima, asperiores suscipit odit?</p>
+        <p class="pt-4 pb-4 pr-3 pl-3 m-2">Video estimation can have a lot of scope in today's world. The most exciting example for us being Motion Capture. Although, it's not
+          just restricted to motion capture video estimation can find other real-life applications such as sports analysis. Please note that we try to estimate the pose of a single person in a recorded video.
+        </p>
         <div class="pb-4">
           <a href="#vid-esti"><button type="button"  class="btn btn-outline-dark" style="border-radius: 20px 20px 20px 20px;"><b>Try this out !</b></button></a>
         </div>
@@ -73,8 +77,10 @@
       <div class="col-md-4 text-center">
         <h3 class="pt-4 pb-3"> Real time Estimation </h3>
         <h6 class="">&#128308<b>LIVE</b></h6>
-        <i class="fas fa-camera fa-5x p-2 pt-3"></i>
-        <p class="pt-4 pb-4 pr-3 pl-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis animi quas maiores alias, enim sint doloribus eveniet omnis blanditiis hic praesentium impedit nemo provident nam accusamus dolores optio natus?</p>
+        <i class="fas fa-camera fa-5x"></i>
+        <p class="pt-4 pb-5 pr-3 pl-3 m-2">Real-Time is by far the most crucial of Human Pose Estimations as it finds it's usefulness in security and surveillance, human threat
+          detection and many other application where the human eye cannot survey everywhere at once. Or sometimes it can be used just to have some fun through your webcam!
+        </p>
         <div class="pb-4">
           <a href="#real-esti"><button type="button"  class="btn btn-outline-dark" style="border-radius: 20px 20px 20px 20px;"><b>Try this out !</b></button></a>
         </div>
@@ -97,9 +103,9 @@
         </div>
         <div class="col-md-7 text-center">
           <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia kjsbdfjkj njujewb </li> <br>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam fugiat nob</li> <br>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur</li>
+            <li>Click on "Choose a Photo" to browse and upload a picture from your device.</li> <br>
+            <li>After the estimation, you will be able to see the original and the estimated image side-by-side. Through this you will be able to judge how accurate the model is.</li> <br>
+            <li><b>Note:</b> Upload a picture that has a person in it. The format of the picture should be .jpeg, .jpg, .png.</li>
           </ul>
           <div class="pt-5 pl-1">
             <form action ="/upload" method="post" autocomplete="off" enctype=multipart/form-data>
@@ -131,9 +137,9 @@
         </div>
         <div class="col-md-7 text-center">
           <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia kjsbdfjkj njujewb </li> <br>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam fugiat nob</li> <br>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur</li>
+            <li>Click on "Choose a Video" to browse and upload a video from your device.</li> <br>
+            <li>After the estimation, you will be able to see the estimated video side-by-side. Through this you will be able to judge how accurate the model is.</li> <br>
+            <li><b>Note:</b> Upload a video that has a person in it. The format of the video should be .mp4, .mov, .avi.</li>
           </ul>
           <div class="pt-5 pl-1">
           <form action ="/vidupload" method="post" enctype=multipart/form-data>
@@ -164,9 +170,9 @@
         </div>
         <div class="col-md-7 text-center">
           <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia kjsbdfjkj njujewb </li> <br>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam fugiat nob</li> <br>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere ea incidunt perferendis, sint ipsa officia Lorem ipsum dolor sit amet consectetur</li>
+            <li>Unlike Image Estimation and Video Estimation, for Real-Time, you don't have to upload anything.</li> <br>
+            <li>Click on "Go Live" and in case the application asks you for your webcam permission, grant access to your webcam and the model will estimate the pose of the person in the webcam's frame.</li> <br>
+            <li><b>Note:</b> We don't store any of your data.</li>
           </ul>
           <div class="pt-5 pl-1">
             <form action="/video_feed" method="post">

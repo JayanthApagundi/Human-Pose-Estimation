@@ -62,6 +62,7 @@ html {
 .detail p {
   text-align: center;
   text-align: justify;
+  word-spacing:1px;
 }
 
 
@@ -75,8 +76,8 @@ html {
 
 .detail h6 {
   font-size: 15px;
-  position: absolute;
-  right:15%;
+  text-align: end;
+  padding: 0 30% 0 0;
 }
 
 .img-desc h1 {
@@ -118,7 +119,7 @@ html {
   text-align: justify;
 }
 
-.real-desc b {
+.real-desc button b {
   font-size: 8px;
   position: absolute
 }
