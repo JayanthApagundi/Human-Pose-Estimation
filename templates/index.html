@@ -28,12 +28,12 @@
     <div class="content">
       <div class="row">
       <div class="col-md-7 text-left">
-      <h1>Human Pose Estimation </h1>
+      <h1> Human Pose Estimation </h1>
       </div>
     </div>
      <div class="row">
      <div class="col-md-6 ">
-      <p class="pt-5 pr-4 pl-4 m-2">Human Pose Estimation is defined as the problem of localization of human joints (also known as keypoints - elbows, wrists, etc) in images or videos. It is also defined as the search for a specific pose in space of all articulated poses. 2D Pose estimates a 2D pose (x,y) coordinates for each joint from a RGB image. 3D Pose estimates a 3D pose (x,y,z) coordinates a RGB image.
+      <p class="pt-5 m-2">Human Pose Estimation is defined as the problem of localization of human joints (also known as keypoints - elbows, wrists, etc) in images or videos. It is also defined as the search for a specific pose in space of all articulated poses. 2D Pose estimates a 2D pose (x,y) coordinates for each joint from a RGB image. 3D Pose estimates a 3D pose (x,y,z) coordinates a RGB image.
       Human Pose Estimation has some pretty cool applications like surveillance and security, Augmented/Virtual Reality, Animations, Gaming, Activity recognition, Teaching robots to perform particular action/tasks. </p>
     </div>
   </div>
@@ -45,43 +45,44 @@
     </div>
   </section>
 
-  <section class="container-fluid detail" id="details">
+  <section class="container-fluid detail p-1" id="details">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="pt-4 pb-1"> Pose Estimation Techniques </h1>
+        <h1 class="pt-1"> Pose Estimation Techniques </h1>
       </div>
     </div>
     <hr style="color: black;">
     <div class="row">
       <div class="col-md-4 text-center">
-        <h3 class="pt-4 pb-3"> Image Estimation </h3>
+        <h3 class="pt-1 pb-1"> Image Estimation </h3>
         <i class="fas fa-image fa-5x p-2 pt-3"></i>
-        <p class="pt-4 pb-5 pr-3 pl-3 m-2">Here we try to estimate the posture of the person present in a picture(a static image).
+        <p class="pt-4 pb-4 pr-3 pl-3 m-2">Here, we try to estimate the posture of the person present in a picture(a static image).
           Compared to Video or Real-Time, Image Estimation is comparatively easier to compute. Please note that here, we can estimate the pose of a single person in the image.
+          Hence, it is advised to upload a picture which has a single person in it.
         </p>
-        <div class="pb-4 pt-1 mt-4">
+        <div class="pb-3">
         <a href="#img-esti"><button type="button"  class="btn btn-outline-dark" style="border-radius: 20px 20px 20px 20px;"><b>Try this out !</b></button></a>
       </div>
       </div>
       <div class="col-md-4 text-center">
-        <h3 class="pt-4 pb-3"> Video Estimation </h3>
+        <h3 class="pt-1 pb-1"> Video Estimation </h3>
         <i class="fas fa-video fa-5x p-2 pt-3"></i>
         <p class="pt-4 pb-4 pr-3 pl-3 m-2">Video estimation can have a lot of scope in today's world. The most exciting example for us being Motion Capture. Although, it's not
           just restricted to motion capture video estimation can find other real-life applications such as sports analysis. Please note that we try to estimate the pose of a single person in a recorded video.
         </p>
-        <div class="pb-4">
+        <div class="pb-3">
           <a href="#vid-esti"><button type="button"  class="btn btn-outline-dark" style="border-radius: 20px 20px 20px 20px;"><b>Try this out !</b></button></a>
         </div>
       </div>
       <div class="col-md-4 text-center">
-        <h3 class="pt-4 pb-3"> Real time Estimation </h3>
+        <h3 class="pt-1 pb-1"> Real time Estimation </h3>
         <h6 class="">&#128308<b>LIVE</b></h6>
         <i class="fas fa-camera fa-5x"></i>
-        <p class="pt-4 pb-5 pr-3 pl-3 m-2">Real-Time is by far the most crucial of Human Pose Estimations as it finds it's usefulness in security and surveillance, human threat
-          detection and many other application where the human eye cannot survey everywhere at once. Or sometimes it can be used just to have some fun through your webcam!
+        <p class="pt-4 pb-4 pr-3 pl-3 m-2">Real-Time is by far the most crucial of Human Pose Estimations as it finds it's usefulness in security and surveillance, human threat
+          detection and many other application where the human eye cannot survey everywhere at the same time. Sometimes it can also be used just to have some fun through your webcam and the insights from it
         </p>
-        <div class="pb-4">
+        <div class="pb-3">
           <a href="#real-esti"><button type="button"  class="btn btn-outline-dark" style="border-radius: 20px 20px 20px 20px;"><b>Try this out !</b></button></a>
         </div>
       </div>
@@ -102,10 +103,10 @@
           <img class="img-fluid features mr-5 pb-5 pt-4 pr-3" src="../static/images/img-esti.png">
         </div>
         <div class="col-md-7 text-center">
-          <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
-            <li>Click on "Choose a Photo" to browse and upload a picture from your device.</li> <br>
-            <li>After the estimation, you will be able to see the original and the estimated image side-by-side. Through this you will be able to judge how accurate the model is.</li> <br>
-            <li><b>Note:</b> Upload a picture that has a person in it. The format of the picture should be .jpeg, .jpg, .png.</li>
+          <ul class="pt-3 pr-5 pl-5 pb-2 m-4">
+            <li>Click on "Choose a Photo" to browse and upload the picture from your device.</li> <br> <br>
+            <li>After the estimation, you will be able to see the original and the pose estimated image side-by-side. Through this you will be able to judge the accuracy and performance of the model.</li> <br> <br>
+            <li><b>Note:</b> Upload a picture that has a person in it. The format of the picture should be <b>.jpeg</b> or <b>.jpg</b> or <b>.png</b>.</li>
           </ul>
           <div class="pt-5 pl-1">
             <form action ="/upload" method="post" autocomplete="off" enctype=multipart/form-data>
@@ -136,10 +137,10 @@
           <img class="img-fluid features mr-5 pb-5 pt-4 pr-3" src="../static/images/video-esti.png">
         </div>
         <div class="col-md-7 text-center">
-          <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
-            <li>Click on "Choose a Video" to browse and upload a video from your device.</li> <br>
-            <li>After the estimation, you will be able to see the estimated video side-by-side. Through this you will be able to judge how accurate the model is.</li> <br>
-            <li><b>Note:</b> Upload a video that has a person in it. The format of the video should be .mp4, .mov, .avi.</li>
+          <ul class="pt-3 pr-5 pl-5 pb-2 m-4">
+            <li>Click on "Choose a Video" to browse and upload the video from your device.</li> <br><br>
+            <li>After the estimation, you will be able to see the pose estimated video as the output. Through this you will be able to judge the accuracy and performance of the model.</li> <br><br>
+            <li><b>Note:</b> Upload a video that has a person in it. The format of the video should be <b>.mp4</b> or <b>.mov</b> or <b>.avi</b>.</li>
           </ul>
           <div class="pt-5 pl-1">
           <form action ="/vidupload" method="post" enctype=multipart/form-data>
@@ -169,9 +170,9 @@
           <img class="img-fluid features mr-5 pb-5 pt-4 pr-3" src="../static/images/live-esti.png">
         </div>
         <div class="col-md-7 text-center">
-          <ul class="pt-5 pr-5 pl-5 pb-2 m-2">
-            <li>Unlike Image Estimation and Video Estimation, for Real-Time, you don't have to upload anything.</li> <br>
-            <li>Click on "Go Live" and in case the application asks you for your webcam permission, grant access to your webcam and the model will estimate the pose of the person in the webcam's frame.</li> <br>
+          <ul class="pt-5 pr-5 pl-5 pb-2 m-4">
+            <li>Unlike Image Estimation and Video Estimation, for Real-Time, you don't have to upload anything.</li> <br> <br>
+            <li>Click on "Go Live" and in case the application asks you for your webcam permission, grant access to your webcam and the model will estimate the pose of the person in the webcam's frame.</li> <br> <br>
             <li><b>Note:</b> We don't store any of your data.</li>
           </ul>
           <div class="pt-5 pl-1">

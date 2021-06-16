@@ -3,8 +3,8 @@ html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 html {
@@ -48,11 +48,15 @@ html {
   text-align: center;
   text-align: justify;
   letter-spacing: 0.6px;
+  word-spacing:1.5px;
+  font-weight:450;
+  padding-left:2%;
 }
 
 .content button {
   font-size:20px;
   border-radius: 20px 20px 20px 20px;
+  font-family: sans-serif;
 }
 
 .detail {
@@ -62,7 +66,8 @@ html {
 .detail p {
   text-align: center;
   text-align: justify;
-  word-spacing:1px;
+  word-spacing:1.3px;
+  font-weight:450;
 }
 
 
@@ -91,6 +96,9 @@ html {
 
 .img-desc li {
   text-align: justify;
+  font-size: 18px;
+  font-weight:480;
+  word-spacing:1.2px;
 }
 
 .vid-desc h1 {
@@ -104,6 +112,9 @@ html {
 
 .vid-desc li {
   text-align: justify;
+  font-size: 18px;
+  font-weight:480;
+  word-spacing:1.2px;
 }
 
 .real-desc h1 {
@@ -117,6 +128,9 @@ html {
 
 .real-desc li {
   text-align: justify;
+  font-size: 18px;
+  font-weight:480;
+  word-spacing:1.2px;
 }
 
 .real-desc button b {
